@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CalenderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ Route::get('/', function () {
 Route::get('wizard', function () {
     return view('default');
 });
+
+Route::get('calendar-event', [CalenderController::class, 'index']);
+Route::post('calendar-crud-ajax', [CalenderController::class, 'calendarEvents']);
